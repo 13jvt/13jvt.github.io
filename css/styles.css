@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 16px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  color: #C5C8C6;
+}
+body {
+  background-color: #25282c;
+}
+fieldset {
+  border: 1px solid #C5C8C6;
+  border-radius: 5px;
+  overflow:hidden;
+
+  position: relative;
+  display: inline-block;
+  padding: 4px 10px 6px 10px;
+}
+
+/* layout */
+#layout_container {
+  display: grid;
+  
+  width: 100%;
+  padding: 2px 8px 0px 8px;
+}
+
+/* logger */
+/* from: https://stackoverflow.com/a/45387558 */
+.log-prefix { color: #C5C8C6; }
+.log-boolean,
+.log-undefined { color: magenta; }
+.log-object,
+.log-string { color: orange; }
+.log-number { color: cyan; }
+#logger_container > pre {
+  white-space: pre-wrap;
+}
+
+/* game */
+/* #game_container {} */
+
+/* controls */
+/* #controls_container {} */
+
+/* editor */
+/* based on: https://stackoverflow.com/a/32751808/15837840 */
+#editor_container {
+  width: 100%;
+}
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* responsive layouts */
+@media only screen and (min-width: 1201px) {
+  #layout_container {
+    grid-template-rows: auto auto 438px 280px auto;
+    grid-template-columns: auto 8px 660px;
+  }
+  #header {
+    grid-row: 1;
+    grid-column: 1/-1;
+  }
+  #controls_container {
+    grid-row: 2;
+  }
+  #editor_container {
+    grid-row: 3;
+  }
+  #game_container {
+    grid-row: 2/4;
+    grid-column: 3;
+  }
+  #logger_container {
+    grid-row: 4;
+    grid-column: 1/-1;
+  }
+  #footer {
+    grid-row: 5;
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 901px) {
+  #layout_container {
+    grid-template-rows: auto 508px auto 280px auto;
+    grid-template-columns: 662px 8px auto;
+  }
+  #header {
+    grid-row: 1;
+    grid-column: 1/-1;
+  }
+  #game_container {
+    grid-row: 2;
+  }
+  #logger_container {
+    grid-row: 2/4;
+    grid-column: 3;
+  }
+  #controls_container {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #editor_container {
+    grid-row: 4;
+    grid-column: 1/-1;
+  }
+  #footer {
+    grid-row: 5;
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #layout_container {
+    grid-template-rows: auto 508px auto 320px 240px auto;
+  }
+  #header {
+    grid-row: 1;
+  }
+  #game_container {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+  }
+  #controls_container {
+    grid-row: 3;
+  }
+  #editor_container {
+    grid-row: 4;
+  }
+  #logger_container {
+    grid-row: 5;
+  }
+  #footer {
+    grid-row: 6;
+  }
+}
