@@ -1,11 +1,12 @@
+// modified from: https://stackoverflow.com/a/45387558
 (function (logger) {
-  console.old = console.log;
+  console.oldLog = console.log;
   console.log = function () {
-    var output = "<span class=\"log-prefix\">>&nbsp;</span>", arg, i;
+    var output = "<span class=\"log-", arg, i;
     
     for (i = 0; i < arguments.length; i++) {
       arg = arguments[i];
-      output += "<span class=\"log-" + (typeof arg) + "\">";
+      output += (typeof arg) + "\">";
 
       if (
         typeof arg === "object" &&
@@ -21,12 +22,25 @@
     }
 
     logger.innerHTML += output + "<br>";
-    console.old.apply(undefined, arguments);
-  };
-})(document.getElementById("logger"));
+    console.oldLog.apply(undefined, arguments);
 
-console.log("Hi!", {a:3, b:6}, 42, true);
-console.log("Multiple", "arguments", "here");
-console.log(null, undefined);
-console.log("very very very very very very very very very very very long line that needs to break");
-console.old("Eyy, that's the old and boring one.");
+    logger.innerHTML += "<span class=\"log-prefix\">>&nbsp;</span>";
+  };
+
+  console.oldError = console.error;
+  console.error = function () {
+    var output = "", arg, i;
+    
+    for (i = 0; i < arguments.length; i++) {
+      arg = arguments[i];
+      output += "<span class=\"log-error\">" + arg + "</span>&nbsp;";
+    }
+
+    logger.innerHTML += output + "<br>";
+    console.oldError.apply(undefined, arguments);
+
+    logger.innerHTML += "<span class=\"log-prefix\">>&nbsp;</span>";
+  };
+
+  logger.innerHTML += "<span class=\"log-prefix\">>&nbsp;</span>";
+})(document.getElementById("logger"));

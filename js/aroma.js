@@ -477,8 +477,11 @@
 
     function Audio() {
       this.sources = [];
-      // this.context = new AudioContext;
-      this.context = new AudioContext || new webkitAudioContext;
+      try {
+        this.context = new webkitAudioContext;
+      } catch (error) {
+        this.context = new AudioContext;
+      }
     }
 
     Audio.prototype.stop_all = function() {

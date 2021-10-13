@@ -34,6 +34,7 @@ fieldset {
 .log-object,
 .log-string { color: orange; }
 .log-number { color: cyan; }
+.log-error { color: crimson; }
 #logger_container > pre {
   white-space: pre-wrap;
 }
@@ -42,6 +43,7 @@ fieldset {
 /* #game_container {} */
 
 /* controls */
+/* button > svg */
 /* #controls_container {} */
 
 /* editor */
@@ -84,7 +86,7 @@ fieldset {
 }
 @media only screen and (max-width: 1200px) and (min-width: 901px) {
   #layout_container {
-    grid-template-rows: 508px auto 280px auto;
+    grid-template-rows: 508px auto 440px auto;
     grid-template-columns: 662px 8px auto;
   }
   #game_container {
@@ -109,7 +111,7 @@ fieldset {
 }
 @media only screen and (max-width: 900px) {
   #layout_container {
-    grid-template-rows: 508px auto 320px 240px auto;
+    grid-template-rows: 508px auto 440px 240px auto;
   }
   #game_container {
     grid-row: 1;

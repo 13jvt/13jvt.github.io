@@ -10,34 +10,38 @@
 
 <body>
 <div id="layout_container">
+  <fieldset id="editor_container">
+    <legend>Editor</legend>
+    
+    <div id="editor"></div>
+    <script src="js/editor.js" type="text/javascript"></script>
+  </fieldset>
+
   <fieldset id="game_container">
     <legend>Game Window</legend>
 
-    <script type="text/javascript">
-      var game = new Aroma("game_container", 640, 480);
-    </script>
+    <script src="js/game.js" text/javascript"></script>
   </fieldset>
+
+  <div id="controls_container">
+    <button id="run_button">
+      <svg width="16" height="16" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><path d="M17 8.5L0 17V0z" fill="#ED225D" fill-rule="evenodd"></path></svg>
+    </button>
+    <button id="stop_button">
+      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><path d="M0 0h16v16H0z" fill="#ED225D" fill-rule="evenodd"></path></svg>
+    </button>
+
+    <input type="radio" id="dark_button" name="editor_theme" checked="checked">Dark</input>
+    <input type="radio" id="light_button"name="editor_theme">Light</input>
+
+    <script src="js/controls.js" type="text/javascript"></script>
+  </div>
 
   <fieldset id="logger_container">
     <legend>Console</legend>
 
     <pre id="logger"></pre>
     <script src="js/logger.js" type="text/javascript"></script>
-  </fieldset>
-
-  <fieldset id="controls_container">
-    <legend>Controls</legend>
-
-    Control buttons will go here (likely use a flexbox)
-  </fieldset>
-
-  <fieldset id="editor_container">
-    <legend>Editor</legend>
-    
-    <div id="editor">function aroma.draw()
-  aroma.graphics.print("Hello World!", 290, 230)
-end</div>
-    <script src="js/editor.js" type="text/javascript"></script>
   </fieldset>
 
   <fieldset id="info_container">
