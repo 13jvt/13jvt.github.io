@@ -11,14 +11,14 @@ document.addEventListener("keydown", function(e) {
   }
 });
 
-document.getElementById("run_button").addEventListener("click", function(e) {
+document.getElementById("run_button").onclick = function() {
   let code = editor.getValue();
   localStorage.setItem("code", code);
   game.execute(code);
-});
+};
 
-document.getElementById("stop_button").addEventListener("click", function(e) {
+document.getElementById("stop_button").onclick = function() {
   let code = editor.getValue();
   localStorage.setItem("code", code);
   game.execute("");
-});
+};

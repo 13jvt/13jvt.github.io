@@ -13,29 +13,34 @@ var editor = (function() {
   aceEditor.setShowPrintMargin(false);
   aceEditor.setFontSize(16);
 
+  // multiple tabs
+  // tabs = 0;
+  // aceEditor.newTab = function() {
+  //   console.log("added tab");
+  // };
+
   // persistent code
-  // localStorage.setItem("code", "");
   let code = localStorage.getItem("code");
   if (!code) {
     code = `--example game loop
-  local position = { x = 290, y = 280 }
-  local origin = { x = 290, y = 230 }
-  local time = 0
+local position = { x = 290, y = 280 }
+local origin = { x = 290, y = 230 }
+local time = 0
 
-  function aroma.update(dt)
-      time = time + dt
-      position.x = origin.x + 50 * math.sin(time);
-      position.y = origin.y + 50 * math.cos(time);
-  end
+function aroma.update(dt)
+    time = time + dt
+    position.x = origin.x + 50 * math.sin(time);
+    position.y = origin.y + 50 * math.cos(time);
+end
 
-  function aroma.draw()
-      aroma.graphics.print("Hello World!", position.x, position.y)
-  end
+function aroma.draw()
+    aroma.graphics.print("Hello World!", position.x, position.y)
+end
 
-  function aroma.keypressed (key_name, key_code)
-      print("key pressed: "..key_name)
-  end
-  `;
+function aroma.keypressed (key_name, key_code)
+    print("key pressed: "..key_name)
+end
+`;
     localStorage.setItem("code", code);
   }
   else {
