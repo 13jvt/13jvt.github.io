@@ -1,5 +1,11 @@
+## Tasks
+
 - Editor Tabs (+ require functionality)
   - [ace API](https://ace.c9.io/#nav=api&api=ace)
   - [example code](https://codepen.io/rharish100193/pen/KgqyjP?editors=1010)
 - Image selection menu
 - Import/Export source code + standalone
+
+## Fixes
+
+- Fix console scroll issue (for mid-widths/out-of-viewport)

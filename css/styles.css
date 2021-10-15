@@ -44,12 +44,17 @@ fieldset {
 .log-error { color: crimson; }
 #logger_container {
   overflow: auto;
+
+  /* scroll to bottom hack */
+  display: flex;
+  flex-direction: column-reverse;
 }
 #logger_container > pre {
   /* wrap lines */
   white-space: pre-wrap;
-  /* add padding to fix scroll issue */
-  padding-bottom: 10px;
+
+  /* start at top (see hack above) */
+  margin-bottom: auto;
 }
 
 /* game window/controls */
@@ -129,7 +134,8 @@ fieldset {
 }
 @media only screen and (max-width: 1200px) and (min-width: 901px) {
   #layout_container {
-    grid-template-rows: auto 440px auto;
+    /* 568px hack to force overflow of logger */
+    grid-template-rows: 568px 440px auto;
     grid-template-columns: 666px 8px auto;
   }
   #exec_container {

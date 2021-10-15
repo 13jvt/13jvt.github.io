@@ -28,7 +28,7 @@ var logger = (function () {
     console.oldLog.apply(undefined, arguments);
 
     logElement.innerHTML += logPrefix;
-    logElement.scrollIntoView(false);
+    // logElement.scrollIntoView(false);
   };
 
   console.oldError = console.error;
@@ -44,7 +44,7 @@ var logger = (function () {
     console.oldError.apply(undefined, arguments);
 
     logElement.innerHTML += logPrefix;
-    logElement.scrollIntoView(false);
+    // logElement.scrollIntoView(false);
   };
 
   return {
