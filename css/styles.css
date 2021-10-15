@@ -50,8 +50,9 @@ fieldset {
   flex-direction: column-reverse;
 }
 #logger_container > pre {
-  /* wrap lines */
+  /* wrap lines, fit to grid */
   white-space: pre-wrap;
+  word-break: break-all;
 
   /* start at top (see hack above) */
   margin-bottom: auto;
