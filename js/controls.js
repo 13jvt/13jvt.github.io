@@ -22,3 +22,7 @@ document.getElementById("stop_button").onclick = function() {
   localStorage.setItem("code", code);
   game.execute("");
 };
+
+// document.getElementById("fullscreen_button").onclick = function() {
+//   localStorage.setItem("code", code);
+// };

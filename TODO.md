@@ -1,11 +1,16 @@
 ## Tasks
 
-- Editor Tabs (+ require functionality)
+- Window controls
+  - Size info (coordinate system)
+- Editor Tabs (+ Lua's 'require' functionality)
   - [ace API](https://ace.c9.io/#nav=api&api=ace)
   - [example code](https://codepen.io/rharish100193/pen/KgqyjP?editors=1010)
-- Image selection menu
+- Assets
+  - Image selection menu
+  - Import images
 - Import/Export source code + standalone
 
-## Fixes
+## Extra
 
-- Fix console scroll issue (for mid-widths/out-of-viewport)
+- Resizeable panes
+- Fullscreen game window (unsupported by Aroma)

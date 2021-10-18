@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font: 16px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
   color: #C5C8C6;
+
+  scrollbar-width: thin;
+  scrollbar-color: #C5C8C6 transparent;
 }
 body {
   background-color: #272822;
@@ -23,6 +26,22 @@ fieldset {
   position: relative;
   display: inline-block;
   padding: 4px 10px 6px 10px;
+}
+
+/* scrollbar */
+/* from: https://www.digitalocean.com/community/tutorials/css-scrollbars */
+*::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #C5C8C6; /* color of the scroll thumb */
+  border-radius: 5px; /* roundness of the scroll thumb */
+  border: 2px solid #272822; /* shrink scrollbar size */
 }
 
 /* layout */
